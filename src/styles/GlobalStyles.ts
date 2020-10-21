@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
       return append;
     }}
 
-    --shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow: 0px 4px 7px rgba(0, 0, 0, 0.15);
 
     font-size: 62.5%;
   }

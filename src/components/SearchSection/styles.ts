@@ -10,6 +10,7 @@ export const Container = styled.div`
   flex-direction: column;
 
   @media (min-width: 52.5rem) {
+    margin-top: 5rem;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -120,6 +121,8 @@ export const SelectRegion = styled.div`
   }
 
   &.active {
+    border-color: var(--text-color);
+
     > button > svg {
       transform: rotate(180deg);
     }
@@ -150,9 +153,9 @@ export const SearchIcon = styled(FaSearch)`
 `;
 
 export const CloseIcon = styled(FaTimes)`
-  width: 1.6rem;
-  height: 1.6rem;
-  margin: 0 0.4rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin: 0 0.6rem;
 
   transition: 0.2s;
   cursor: pointer;

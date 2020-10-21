@@ -18,7 +18,14 @@ interface Props {
 const Header: React.FC<Props> = ({ themeName, setThemeName }) => {
   function toggleTheme() {
     setThemeName(themeName === 'light' ? 'dark' : 'light');
+
+    window.localStorage.setItem(
+      'themeName',
+      themeName === 'light' ? 'dark' : 'light'
+    );
   }
+
+ 
 
   return (
     <Container>
@@ -28,7 +35,7 @@ const Header: React.FC<Props> = ({ themeName, setThemeName }) => {
         </Link>
         <ToggleThemeButton onClick={toggleTheme}>
           {themeName === 'light' ? <MoonLightIcon /> : <MoonDarkIcon />}
-          <span>{themeName} Mode</span>
+          <span>{themeName === 'light' ? 'Dark' : 'Light'} Mode</span>
         </ToggleThemeButton>
       </NavBar>
     </Container>

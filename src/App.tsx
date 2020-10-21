@@ -15,6 +15,14 @@ function App() {
   const [themeName, setThemeName] = React.useState<ThemeName>('light');
   const currentTheme = themes[themeName];
 
+  React.useEffect(() => {
+    if (window.localStorage.getItem('themeName')) {
+      const localTheme = window.localStorage.getItem('themeName') as ThemeName;
+
+      setThemeName(localTheme);
+    }
+  }, [setThemeName]);
+
   return (
     <ThemeProvider theme={currentTheme}>
       <BrowserRouter>

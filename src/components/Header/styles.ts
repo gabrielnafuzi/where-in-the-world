@@ -25,8 +25,8 @@ export const NavBar = styled.nav`
 `;
 
 export const ToggleThemeButton = styled.button`
+  width: 9.5rem;
   background: none;
-
   display: flex;
   align-items: center;
   outline: none;
