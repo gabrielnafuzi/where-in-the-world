@@ -59,7 +59,7 @@ export const SelectRegion = styled.div`
 
   position: relative;
   margin-top: 4.6rem;
-  max-width: 50%;
+  max-width: 64%;
   background: var(--element);
 
   box-shadow: var(--shadow);

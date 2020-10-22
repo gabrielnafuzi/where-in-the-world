@@ -25,8 +25,6 @@ const Header: React.FC<Props> = ({ themeName, setThemeName }) => {
     );
   }
 
- 
-
   return (
     <Container>
       <NavBar>

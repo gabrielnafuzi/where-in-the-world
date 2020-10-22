@@ -2,6 +2,7 @@ import React from 'react';
 import ReactPaginate from 'react-paginate';
 
 import CountryCard from '../CountryCard';
+import Loading from '../Loading';
 
 import {
   Container,
@@ -37,12 +38,12 @@ const CountriesSection: React.FC = () => {
     })();
   }, []);
 
-  if (!countries) {
-    return <h1>Loading...</h1>;
-  }
-
   function handlePageClick(selectedItem: { selected: number }) {
     setCurrentPage(selectedItem.selected);
+  }
+
+  if (!countries.length) {
+    return <Loading />;
   }
 
   return (
@@ -60,7 +61,7 @@ const CountriesSection: React.FC = () => {
         pageCount={countries.length / 8}
         breakClassName={'break-me'}
         marginPagesDisplayed={1}
-        pageRangeDisplayed={3}
+        pageRangeDisplayed={1}
         onPageChange={handlePageClick}
         containerClassName={'pagination'}
         activeClassName={'active'}

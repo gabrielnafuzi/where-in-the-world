@@ -12,16 +12,11 @@ import Header from './components/Header';
 import { GlobalStyles } from './styles/GlobalStyles';
 
 function App() {
-  const [themeName, setThemeName] = React.useState<ThemeName>('light');
+  const [themeName, setThemeName] = React.useState<ThemeName>(
+    (window.localStorage.getItem('themeName') as ThemeName) || 'light'
+  );
+
   const currentTheme = themes[themeName];
-
-  React.useEffect(() => {
-    if (window.localStorage.getItem('themeName')) {
-      const localTheme = window.localStorage.getItem('themeName') as ThemeName;
-
-      setThemeName(localTheme);
-    }
-  }, [setThemeName]);
 
   return (
     <ThemeProvider theme={currentTheme}>

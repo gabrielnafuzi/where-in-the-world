@@ -11,33 +11,49 @@ export const Container = styled.div`
   align-items: center;
 
   .pagination {
+    max-width: 40rem;
     display: flex;
     margin-top: 4rem;
 
     li {
+      border: 1px solid var(--text-color);
+      border-radius: 0.4rem;
       padding: 0.4rem;
-      margin: 0 0.4rem;
+      margin: 0 0.6rem;
+
+      transition: all 0.2s ease-in-out;
 
       cursor: pointer;
 
       &.active,
       &:hover {
+        border-color: #a080fa;
+
         a {
           color: #a070fa;
+
+          > svg > * {
+            fill: #a070fa;
+          }
         }
       }
     }
 
     li a {
-      width: 2.4rem;
-      height: 2.4rem;
-      font-size: 2.4rem;
+      font-weight: 600;
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.8rem;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
       outline: none;
+
+      svg {
+        transition: all 0.2s ease-in-out;
+      }
     }
   }
 `;
