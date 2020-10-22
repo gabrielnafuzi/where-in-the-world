@@ -82,6 +82,7 @@ export const SelectRegion = styled.div`
   }
 
   > ul {
+    z-index: 10;
     position: absolute;
     top: 70px;
     left: 0;
