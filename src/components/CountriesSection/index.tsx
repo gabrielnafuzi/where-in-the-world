@@ -23,6 +23,7 @@ export interface Country {
 const CountriesSection: React.FC = () => {
   const [countries, setCountries] = React.useState<Country[]>([]);
   const [currentPage, setCurrentPage] = React.useState(0);
+  const itensPerPage = 8;
 
   React.useEffect(() => {
     (async () => {
@@ -49,7 +50,7 @@ const CountriesSection: React.FC = () => {
   return (
     <Container>
       <CountriesWrapper>
-        {countries.slice(currentPage * 8, (currentPage + 1) * 8).map(country => (
+        {countries.slice(currentPage * itensPerPage, (currentPage + 1) * itensPerPage).map(country => (
           <CountryCard key={country.name} country={country} />
         ))}
       </CountriesWrapper>
@@ -58,7 +59,7 @@ const CountriesSection: React.FC = () => {
         previousLabel={<PreviousIcon />}
         nextLabel={<NextIcon />}
         breakLabel={<EllipsisIcon />}
-        pageCount={countries.length / 8}
+        pageCount={countries.length / itensPerPage}
         breakClassName={'break-me'}
         marginPagesDisplayed={1}
         pageRangeDisplayed={1}
